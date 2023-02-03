@@ -69,7 +69,7 @@ jobs:
     - name: updating kubeconfig and helm repo
       run: |
        aws eks --region eu-west-1 update-kubeconfig --name oxygen-dev
-       helm repo add fiter-apps https://fiter1.github.io/oxygen-helm       
+       helm repo add fiter-apps https://fiter1.github.io/oxygen-helm-chart       
     - name: deploy backend
       env:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
