@@ -76,5 +76,6 @@ jobs:
       run: |
        cd helm
        kubectl config set-context --current --namespace=application
+       helm uninstall backend
        helm install backend https://raw.githubusercontent.com/FITER1/oxygen-helm-chart/main/packages/fineract-0.1.3.tgz
        helm upgrade -i backend --set fineract-rest.tag=$IMAGE_TAG .
